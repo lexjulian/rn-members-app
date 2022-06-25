@@ -1,9 +1,9 @@
 import { View, Text } from "react-native";
 
-const Details = () => {
+const Details = ({ id }) => {
   return (
     <View>
-      <Text>Details</Text>
+      <Text>Details - {id}</Text>
     </View>
   );
 };

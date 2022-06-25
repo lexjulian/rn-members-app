@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { View, Text, FlatList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 //components
-import UserList from "../components/UserList";
+import { FocusedStatusBar, HomeHeader, UserList } from "../components";
+import { COLORS } from "../constants";
 
 const Home = () => {
   const [data, setData] = useState([]);
 
   const [loading, setLoading] = useState(true);
-  const url = "https://randomuser.me/api/?results=10";
+  const url = "https://randomuser.me/api/?results=100";
 
   useEffect(() => {
     fetch(url)
@@ -25,6 +26,8 @@ const Home = () => {
       last: item.name.last,
       gender: item.gender,
       id: item.login.uuid,
+      imgUrl: item.picture.large,
+      username: item.login.username,
     };
 
     return <UserList {...props} />;
@@ -32,10 +35,13 @@ const Home = () => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <FocusedStatusBar background={COLORS.primary} />
       <FlatList
         data={data.results}
         keyExtractor={(item) => item.login.uuid}
         renderItem={renderUsersItem}
+        showsVerticalScrollIndicator={false}
+        ListHeaderComponent={<HomeHeader />}
       />
     </SafeAreaView>
   );
