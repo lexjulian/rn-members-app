@@ -2,10 +2,10 @@ import { View, Text, Image, StyleSheet } from "react-native";
 
 import { DetailContent, DetailsHeader, FocusedStatusBar } from "../components";
 import { RectButton } from "../components/Button";
-import { COLORS } from "../constants";
 
 const Details = ({ route, navigation }) => {
   const { data } = route.params;
+
   return (
     <View>
       <DetailsHeader />

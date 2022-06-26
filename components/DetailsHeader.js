@@ -1,7 +1,7 @@
-import { View, Image, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
 
-const DetailsHeader = () => {
+const DetailsHeader = (navigation) => {
   return (
     <View style={styles.background}>
       <View>

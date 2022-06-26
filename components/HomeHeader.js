@@ -5,7 +5,7 @@ import { COLORS, FONTS, SIZES } from "../constants";
 const HomeHeader = () => {
   return (
     <View style={styles.headerSettings}>
-      <Text style={styles.headerTitle}>Who to follow</Text>
+      <Text style={styles.headerTitle}>Suggested for you</Text>
     </View>
   );
 };
@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
   headerSettings: {
     padding: SIZES.font,
     backgroundColor: COLORS.primary,
-    justifyContent: "center",
-    alignItems: "center",
+    // justifyContent: "center",
+    // alignItems: "center",
   },
   headerTitle: {
     color: COLORS.white,

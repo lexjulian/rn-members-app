@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, Pressable, StyleSheet, Image } from "react-native";
-import { COLORS, FONTS, SHADOWS, SIZES } from "../constants";
+import { COLORS, FONTS, SIZES } from "../constants";
 
 import { RectButton } from "./Button";
 
