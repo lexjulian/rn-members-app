@@ -5,7 +5,7 @@ import { COLORS, FONTS, SIZES } from "../constants";
 const HomeHeader = () => {
   return (
     <View style={styles.headerSettings}>
-      <Text style={styles.headerTitle}>Header</Text>
+      <Text style={styles.headerTitle}>Who to follow</Text>
     </View>
   );
 };

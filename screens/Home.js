@@ -19,27 +19,13 @@ const Home = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  function renderUsersItem(itemData) {
-    const item = itemData.item;
-    const props = {
-      first: item.name.first,
-      last: item.name.last,
-      gender: item.gender,
-      id: item.login.uuid,
-      imgUrl: item.picture.large,
-      username: item.login.username,
-    };
-
-    return <UserList {...props} />;
-  }
-
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FocusedStatusBar background={COLORS.primary} />
       <FlatList
         data={data.results}
         keyExtractor={(item) => item.login.uuid}
-        renderItem={renderUsersItem}
+        renderItem={({ item }) => <UserList data={item} />}
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={<HomeHeader />}
       />

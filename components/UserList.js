@@ -4,14 +4,13 @@ import { COLORS, FONTS, SHADOWS, SIZES } from "../constants";
 
 import { RectButton } from "./Button";
 
-const UserList = ({ first, last, gender, id, imgUrl, username }) => {
+const UserList = ({ data }) => {
   const navigation = useNavigation();
 
   function pressHandler() {
-    navigation.navigate("Details", {
-      id: id,
-    });
+    navigation.navigate("Details", { data });
   }
+
   return (
     <View style={styles.userContainer}>
       <Pressable
@@ -22,13 +21,15 @@ const UserList = ({ first, last, gender, id, imgUrl, username }) => {
         <View style={styles.innerContainer}>
           <View style={{ flexDirection: "row" }}>
             <Image
-              source={{ uri: imgUrl }}
+              source={{ uri: data.picture.large }}
               resizeMode="cover"
               style={styles.imageContainer}
             />
             <View style={styles.userDetails}>
-              <Text style={styles.name}>{`${first} ${last}`}</Text>
-              <Text style={styles.username}>@{username} </Text>
+              <Text
+                style={styles.name}
+              >{`${data.name.first} ${data.name.last}`}</Text>
+              <Text style={styles.username}>@{data.login.username} </Text>
             </View>
           </View>
 
